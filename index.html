@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    i {
+        margin-right: 10px;
+    }
+
+    /*----------bootstrap-navbar-css------------*/
+    .navbar-logo {
+        padding: 15px;
+        color: #fff;
+    }
+
+    .navbar-mainbg {
+        background-color: #5161ce;
+        padding: 0px;
+    }
+
+    #navbarSupportedContent {
+        overflow: hidden;
+        position: relative;
+    }
+
+    #navbarSupportedContent ul {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #navbarSupportedContent ul li a i {
+        margin-right: 10px;
+    }
+
+    #navbarSupportedContent li {
+        list-style-type: none;
+        float: left;
+    }
+
+    #navbarSupportedContent ul li a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        font-size: 15px;
+        display: block;
+        padding: 20px 20px;
+        transition-duration: 0.6s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        position: relative;
+    }
+
+    #navbarSupportedContent>ul>li.active>a {
+        color: #5161ce;
+        background-color: transparent;
+        transition: all 0.7s;
+    }
+
+    #navbarSupportedContent a:not(:only-child):after {
+        content: "\f105";
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 14px;
+        font-family: "Font Awesome 5 Free";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        transition: 0.5s;
+    }
+
+    #navbarSupportedContent .active>a:not(:only-child):after {
+        transform: rotate(90deg);
+    }
+
+    .hori-selector {
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        transition-duration: 0.6s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        background-color: #fff;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        margin-top: 10px;
+    }
+
+    .hori-selector .right,
+    .hori-selector .left {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: #fff;
+        bottom: 10px;
+    }
+
+    .hori-selector .right {
+        right: -25px;
+    }
+
+    .hori-selector .left {
+        left: -25px;
+    }
+
+    .hori-selector .right:before,
+    .hori-selector .left:before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #5161ce;
+    }
+
+    .hori-selector .right:before {
+        bottom: 0;
+        right: -25px;
+    }
+
+    .hori-selector .left:before {
+        bottom: 0;
+        left: -25px;
+    }
+
+
+    @media(min-width: 992px) {
+        .navbar-expand-custom {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-custom .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-custom .navbar-toggler {
+            display: none;
+        }
+
+        .navbar-expand-custom .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+    }
+
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent ul li a {
+            padding: 12px 30px;
+        }
+
+        .hori-selector {
+            margin-top: 0px;
+            margin-left: 10px;
+            border-radius: 0;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        .hori-selector .left,
+        .hori-selector .right {
+            right: 10px;
+        }
+
+        .hori-selector .left {
+            top: -25px;
+            left: auto;
+        }
+
+        .hori-selector .right {
+            bottom: -25px;
+        }
+
+        .hori-selector .left:before {
+            left: -25px;
+            top: -25px;
+        }
+
+        .hori-selector .right:before {
+            bottom: -25px;
+            left: -25px;
+        }
+    }
+
+    button {
+        margin: 20px;
+    }
+
+    .custom-btn {
+        width: 130px;
+        height: 40px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        outline: none;
+    }
+
+    /* 12 */
+    .btn-12 {
+        position: relative;
+        right: 20px;
+        bottom: 20px;
+        border: none;
+        box-shadow: none;
+        width: 130px;
+        height: 40px;
+        line-height: 42px;
+        -webkit-perspective: 230px;
+        perspective: 230px;
+    }
+
+    .btn-12 span {
+        background: rgb(0, 172, 238);
+        background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+        display: block;
+        position: absolute;
+        width: 130px;
+        height: 40px;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        border-radius: 5px;
+        margin: 0;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .btn-12 span:nth-child(1) {
+        box-shadow:
+            -7px -7px 20px 0px #fff9,
+            -4px -4px 5px 0px #fff9,
+            7px 7px 20px 0px #0002,
+            4px 4px 5px 0px #0001;
+        -webkit-transform: rotateX(90deg);
+        -moz-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+        -webkit-transform-origin: 50% 50% -20px;
+        -moz-transform-origin: 50% 50% -20px;
+        transform-origin: 50% 50% -20px;
+    }
+
+    .btn-12 span:nth-child(2) {
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: 50% 50% -20px;
+        -moz-transform-origin: 50% 50% -20px;
+        transform-origin: 50% 50% -20px;
+    }
+
+    .btn-12:hover span:nth-child(1) {
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+    }
+
+    .btn-12:hover span:nth-child(2) {
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        color: transparent;
+        -webkit-transform: rotateX(-90deg);
+        -moz-transform: rotateX(-90deg);
+        transform: rotateX(-90deg);
+    }
+    .warp{
+        width: 40px; background-color: rgb(6, 68, 255); border-radius: 50%;
+    }
+    .warp:hover{
+        width: 130px;
+        border-radius: 2%;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#">SurajMoviesHub</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fa-solid fa-house"></i>Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fa-brands fa-product-hunt"></i>Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section style=" background-image: url(img\ 2.0.jpeg);margin-bottom: 20px; ">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div style="margin-top: 120px; padding: 80px;">
+                        <p style="font-size: 48px; font-weight: 600;"> <span style="color: #5161ce;"> Watch </span>Free
+                            Movies<span style="color: red;">!</span></p>
+                        <p style="font-size: 16px; color: rgb(230, 173, 107);">Hindi | action , Thriller,
+                            Hollywood-Dubbed.</p>
+
+                        <button class="custom-btn btn-12"
+                            style="border: none; outline: none;"><span>Click!</span><span>Watch Now</span></button>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+
+
+                        <div class="col-sm-12"  style=" background-image: url(img1.0.png);  margin-top: 160px;     padding:35% 10.5% 1.5%;    background-position: 50%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 100%; ">
+
+                            <div id="idvideo" style="margin-top: -247px; margin-left: 67px;">
+
+                                4
+                                <video width="410"  height="240" controls>
+                                    <source class="" src="bs.mp4" type="video/mp4"/>
+
+
+
+                                </video>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        
+            <div class="container">
+                <section class="pt-5 pb-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3 class="mb-3">2023 Movies </h3>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                                    data-slide="prev">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button"
+                                    data-slide="next">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row">
+
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                        style=" height: 376px; width: 238px; background-size: 281px 377px;  background-repeat: no-repeat; background-image: url(img/bloddydaddmainposter_d.webp);
+                                                overflow: hidden;
+                                                position: relative;
+                                                border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                        <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                           <div class="warp" >
+                                                            <div class="btn">
+                                                                <span style=" font-size: 16px; " > <b> <a href="" id="btn1">WATCH NOW</a>  </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                            </div>
+                                                           </div>
+                                                        </h2>
+                                                     
+                                                        
+                                                     
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                    style=" height: 376px; width: 238px; background-size: 281px 377px;  background-repeat: no-repeat; background-image: url(img/wp11851029.jpeg);
+                                            overflow: hidden;
+                                            position: relative;
+                                            border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                    <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                       <div class="warp" >
+                                                        <div class="btn">
+                                                            <span style=" font-size: 16px; " > <b> WATCH NOW </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                        </div>
+                                                       </div>
+                                                    </h2>
+                                                 
+                                                    
+                                                 
+
+                                                </div> 
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                    style=" height: 376px; width: 238px; background-size: 236px 377px;  background-repeat: no-repeat; background-image: url(img/wp11851051.jpeg);
+                                            overflow: hidden;
+                                            position: relative;
+                                            border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                    <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                       <div class="warp" >
+                                                        <div class="btn">
+                                                            <span style=" font-size: 16px; " > <b> WATCH NOW </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                        </div>
+                                                       </div>
+                                                    </h2>
+                                                 
+                                                    
+                                                 
+
+                                                </div>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                    style=" height: 376px; width: 238px; background-size: 263px 374px; background-repeat: no-repeat; background-image: url(img/wp11851206.jpeg);
+                                            overflow: hidden;
+                                            position: relative;
+                                            border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                    <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                       <div class="warp" style=" ">
+                                                        <div class="btn">
+                                                            <span style=" font-size: 16px; " > <b> WATCH NOW </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                        </div>
+                                                       </div>
+                                                    </h2>
+                                                 
+                                                    
+                                                 
+
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="row">
+
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                        style=" height: 376px; width: 238px; background-size: 236px 377px;  background-repeat: no-repeat; background-image: url(img/The-Flash-Movie-Poster-01.webp);
+                                                overflow: hidden;
+                                                position: relative;
+                                                border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                        <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                           <div class="warp" >
+                                                            <div class="btn">
+                                                                <span style=" font-size: 16px; " > <b> WATCH NOW </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                            </div>
+                                                           </div>
+                                                        </h2>
+                                                     
+                                                        
+                                                     
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                        style=" height: 376px; width: 238px; background-size: 236px 377px; background-repeat: no-repeat; background-image: url(img/wp11851207.jpeg);
+                                                overflow: hidden;
+                                                position: relative;
+                                                border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                        <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                           <div class="warp" >
+                                                            <div class="btn">
+                                                                <span style=" font-size: 16px; " > <b> WATCH NOW </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                            </div>
+                                                           </div>
+                                                        </h2>
+                                                     
+                                                        
+                                                     
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                    style=" height: 376px; width: 238px; background-size: 236px 377px;  background-repeat: no-repeat; background-image: url(img/wp11851473.jpeg);
+                                            overflow: hidden;
+                                            position: relative;
+                                            border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                    <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                       <div class="warp" >
+                                                        <div class="btn">
+                                                            <span style=" font-size: 16px; " > <b> WATCH NOW </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                        </div>
+                                                       </div>
+                                                    </h2>
+                                                 
+                                                    
+                                                 
+
+                                                </div>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="card"
+                                                    style=" height: 376px; width: 238px; background-size: 236px 377px;  background-repeat: no-repeat; background-image: url(img/wp11851476.jpeg);
+                                            overflow: hidden;
+                                            position: relative;
+                                            border: 1px solid cadetblue;    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.49);">
+                                                    <h2 style="margin-left: 11px; margin-top: 11px; color: white;">
+                                                       <div class="warp" >
+                                                        <div class="btn">
+                                                            <span style=" font-size: 16px; " > <b> WATCH NOW </b></span> <i class="fa-solid fa-arrow-right"></i>
+                                                        </div>
+                                                       </div>
+                                                    </h2>
+                                                 
+                                                    
+                                                 
+
+                                                </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+
+    </section>
+
+</body>
+<script>
+    // ---------Responsive-navbar-active-animation-----------
+    function test() {
+        var tabsNewAnim = $('#navbarSupportedContent');
+        var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+        var activeItemNewAnim = tabsNewAnim.find('.active');
+        var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+        var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+        var itemPosNewAnimTop = activeItemNewAnim.position();
+        var itemPosNewAnimLeft = activeItemNewAnim.position();
+        $(".hori-selector").css({
+            "top": itemPosNewAnimTop.top + "px",
+            "left": itemPosNewAnimLeft.left + "px",
+            "height": activeWidthNewAnimHeight + "px",
+            "width": activeWidthNewAnimWidth + "px"
+        });
+        $("#navbarSupportedContent").on("click", "li", function (e) {
+            $('#navbarSupportedContent ul li').removeClass("active");
+            $(this).addClass('active');
+            var activeWidthNewAnimHeight = $(this).innerHeight();
+            var activeWidthNewAnimWidth = $(this).innerWidth();
+            var itemPosNewAnimTop = $(this).position();
+            var itemPosNewAnimLeft = $(this).position();
+            $(".hori-selector").css({
+                "top": itemPosNewAnimTop.top + "px",
+                "left": itemPosNewAnimLeft.left + "px",
+                "height": activeWidthNewAnimHeight + "px",
+                "width": activeWidthNewAnimWidth + "px"
+            });
+        });
+    }
+    $(document).ready(function () {
+        setTimeout(function () { test(); });
+    });
+    $(window).on('resize', function () {
+        setTimeout(function () { test(); }, 500);
+    });
+    $(".navbar-toggler").click(function () {
+        $(".navbar-collapse").slideToggle(300);
+        setTimeout(function () { test(); });
+    });
+
+
+
+    // --------------add active class-on another-page move----------
+    jQuery(document).ready(function ($) {
+        // Get current path and find target link
+        var path = window.location.pathname.split("/").pop();
+
+        // Account for home page with empty path
+        if (path == '') {
+            path = 'index.html';
+        }
+
+        var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
+        // Add active class to target link
+        target.parent().addClass('active');
+    });
+
+
+
+    var url = 'img/The-Flash-Movie-Poster-01.webp';
+
+    $(document).ready(function () {
+        $("#btn1").click(function(){
+            $(`<img src='${url}'>`).appendTo('#idvideo');
+            alert("hye");
+        });
+    });
+
+ 
+ $(document).ready(function() {
+     
+ });
+
+
+    // Add active class on another page linked
+    // ==========================================
+    // $(window).on('load',function () {
+    //     var current = location.pathname;
+    //     console.log(current);
+    //     $('#navbarSupportedContent ul li a').each(function(){
+    //         var $this = $(this);
+    //         // if the current path is like this link, make it active
+    //         if($this.attr('href').indexOf(current) !== -1){
+    //             $this.parent().addClass('active');
+    //             $this.parents('.menu-submenu').addClass('show-dropdown');
+    //             $this.parents('.menu-submenu').parent().addClass('active');
+    //         }else{
+    //             $this.parent().removeClass('active');
+    //         }
+    //     })
+    // });
+</script>
+
+</html>
